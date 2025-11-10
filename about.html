@@ -1,29 +1,172 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | BennyJeff Diagnostic Center</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About | BennyJeff Medical Diagnostic</title>
+
+  <!-- Bootstrap CSS (same path as index.html) -->
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+
+  <!-- Font Awesome (same as index) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <!-- Main CSS (your style.css) -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <nav class="navbar">
-  <div class="logo">
-    <a href="index.html">BennyJeff Diagnostic Center</a>
-  </div>
 
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="services.html">Services &amp; Tests</a></li>
-    <li><a href="appointment.html">Book Appointment</a></li>
-    <li><a href="contact.html">Contact Us</a></li>
-  </ul>
-</nav>
+  <!-- Header / Navbar (exactly matching index.html markup & classes) -->
+  <nav class="navbar navbar-expand-lg navbar-dark site-header container">
+    <div class="container-fluid px-2">
+      <a class="navbar-brand" href="index.html"><i class="fa-solid fa-stethoscope"></i> BennyJeff Medical Diagnostic</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navCollapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="appointment.html">Book</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="health-tips.html">Health Tips</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
+  <!-- HERO (uses .hero from your style.css so colors and background are consistent) -->
+  <section class="hero-about">
+    <div class="inner reveal">
+      <h1>About BennyJeff Medical Diagnostic</h1>
+      <p class="lead">We deliver accurate diagnostics with compassionate care — trusted by patients and clinicians.</p>
+      <a class="btn-primary-cta" href="appointment.html"><i class="fa-solid fa-calendar-plus"></i> Book an Appointment</a>
+    </div>
+  </section>
 
+  <!-- ABOUT overview -->
+  <section class="section reveal">
+    <h3 class="section-title">Who We Are</h3>
+    <p class="lead">
+      BennyJeff Medical Diagnostic is a modern diagnostic centre dedicated to precise testing, timely reporting and
+      patient-centred service. We combine advanced laboratory equipment with experienced clinicians to provide reliable
+      results that support better healthcare decisions.
+    </p>
+  </section>
 
-  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  
+  <!-- Mission & Vision cards (use card-modern and icon-badge from your CSS) -->
+  <section class="section reveal">
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card-modern p-4">
+          <div class="icon-badge"><i class="fa-solid fa-bullseye"></i></div>
+          <h4 class="mt-2">Our Mission</h4>
+          <p>To deliver dependable, timely and affordable diagnostic services that empower clinicians and patients.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card-modern p-4">
+          <div class="icon-badge"><i class="fa-solid fa-eye"></i></div>
+          <h4 class="mt-2">Our Vision</h4>
+          <p>To be recognized for excellence in diagnostics — combining innovation, accuracy and compassionate care.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core values (cards-grid uses your CSS) -->
+  <section class="section reveal">
+    <h3 class="section-title">Core Values</h3>
+    <div class="cards-grid">
+      <div class="card-modern p-4 text-center">
+        <div class="icon-badge"><i class="fa-solid fa-hand-holding-heart"></i></div>
+        <h5>Compassion</h5>
+        <p class="text-muted">Respectful, patient-first service in every interaction.</p>
+      </div>
+      <div class="card-modern p-4 text-center">
+        <div class="icon-badge"><i class="fa-solid fa-vial"></i></div>
+        <h5>Accuracy</h5>
+        <p class="text-muted">Strict quality controls to ensure reliable results.</p>
+      </div>
+      <div class="card-modern p-4 text-center">
+        <div class="icon-badge"><i class="fa-solid fa-lightbulb"></i></div>
+        <h5>Innovation</h5>
+        <p class="text-muted">Continuous improvement and modern diagnostic technology.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM section using Bootstrap grid + your card-modern (4 members) -->
+  <section class="section reveal">
+    <h3 class="section-title">Meet Our Medical Experts</h3>
+    <p class="lead">A dedicated team of specialists working together to ensure diagnostic excellence.</p>
+
+    <div class="row g-4 mt-3">
+      <div class="col-md-3 col-sm-6">
+        <div class="card-modern text-center p-3 ht-card">
+          <img src="assets/images/doctor-ophthalmologist-s-office.jpg" class="thumb rounded-circle mx-auto" loading="lazy" alt="Dr. Samuel Obi" style="width:110px;height:110px;object-fit:cover;">
+          <h5 class="mt-3">Dr. Samuel Obi</h5>
+          <p class="text-muted mb-1">Chief Medical Officer</p>
+          <small>15+ years — hematology & pathology</small>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card-modern text-center p-3 ht-card">
+          <img src="assets/images/doctor-walking-with-laptop-medium-shot.jpg" class="thumb rounded-circle mx-auto" loading="lazy" alt="Dr. Adaeze Nwoko" style="width:110px;height:110px;object-fit:cover;">
+          <h5 class="mt-3">Dr. Adaeze Nwoko</h5>
+          <p class="text-muted mb-1">Senior Laboratory Scientist</p>
+          <small>Microbiology & lab operations</small>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card-modern text-center p-3 ht-card">
+          <img src="assets/images/nurse-wearing-scrubs-while-working-clinic.jpg" class="thumb rounded-circle mx-auto" loading="lazy" alt="Dr. Kingsley Umeh" style="width:110px;height:110px;object-fit:cover;">
+          <h5 class="mt-3">Dr. Kingsley Umeh</h5>
+          <p class="text-muted mb-1">Radiology Consultant</p>
+          <small>Imaging & diagnostics specialist</small>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card-modern text-center p-3 ht-card">
+          <img src="assets/images/medical-doctor-girl-working-with-microscope-young-female-scientist-doing-vaccine-research.jpg" class="thumb rounded-circle mx-auto" loading="lazy" alt="Dr. Grace Olatunji" style="width:110px;height:110px;object-fit:cover;">
+          <h5 class="mt-3">Dr. Grace Olatunji</h5>
+          <p class="text-muted mb-1">Diagnostic Technician</p>
+          <small>Quality assurance & patient data handling</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA panel (re-uses cta-panel class from style.css) -->
+  <section class="section reveal">
+    <div class="cta-panel">
+      <div class="left">
+        <h3>Ready for reliable diagnostics?</h3>
+        <p>Book an appointment or contact us for enquiries and physician referrals.</p>
+      </div>
+      <div>
+        <a class="btn-primary-cta" href="appointment.html"><i class="fa-solid fa-calendar-check"></i> Book Appointment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (site-footer class from style.css) -->
+  <footer class="site-footer">
+    <p>&copy; 2025 BennyJeff Medical Diagnostic</p>
+    <div>
+      <a href="#" class="text-white me-3"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="#" class="text-white me-3"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#" class="text-white"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </footer>
+
+  <!-- Scripts (same paths & order as index.html) -->
+  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>

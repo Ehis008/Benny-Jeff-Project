@@ -1,81 +1,150 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | BennyJeff Diagnostic Center</title>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Home | BennyJeff Medical Diagnostic</title>
+
+  <!-- Bootstrap CSS (local file or CDN) -->
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <!-- Main CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="logo">
-      <a href="index.html">BennyJeff Diagnostic Center</a>
+  <!-- Header / Navbar (Bootstrap markup for accessibility & responsiveness) -->
+  <nav class="navbar navbar-expand-lg navbar-dark site-header container">
+    <div class="container-fluid px-2">
+      <a class="navbar-brand" href="index.html"><i class="fa-solid fa-stethoscope"></i> BennyJeff Medical Diagnostic</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navCollapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="appointment.html">Book</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="health-tips.html">Health Tips</a></li>
+        </ul>
+      </div>
     </div>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="services.html">Services &amp; Tests</a></li>
-      <li><a href="appointment.html">Book Appointment</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
-    </ul>
   </nav>
 
-  <!-- HERO SECTION -->
-  <header class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
+  <!-- HERO -->
+  <section class="hero-home">
+    <div class="inner reveal">
       <h1>Your Health, Our Priority</h1>
-      <p>Trusted diagnostics with accurate results. State-of-the-art technology and expert care for every patient.</p>
-      <a href="appointment.html" class="btn-hero">Book an Appointment</a>
+      <p>Trusted diagnostics with accurate results — state-of-the-art equipment and compassionate care.</p>
+      <a class="btn-primary-cta" href="appointment.html"><i class="fa-solid fa-calendar-plus"></i> Book an Appointment</a>
     </div>
-  </header>
-
-  <!-- ABOUT PREVIEW -->
-  <section class="about-preview section">
-    <h2>About Us</h2>
-    <p>BennyJeff Diagnostic Center is committed to providing precise and timely medical diagnostics. 
-       Our dedicated professionals and advanced equipment ensure quality healthcare support for patients and doctors alike.</p>
-    <a href="about.html" class="btn">Learn More</a>
   </section>
 
-  <!-- SERVICES PREVIEW -->
-  <section class="services-preview section">
-    <h2>Our Services</h2>
-    <div class="card-container">
-      <div class="card">
-        <img src="assets/images/lab-test.jpg" alt="Laboratory Tests">
-        <div class="card-content">
-          <h3>Laboratory Tests</h3>
-          <p>Comprehensive blood work, urinalysis, and more to support accurate diagnosis.</p>
+  <!-- About preview -->
+  <section class="section reveal">
+    <h3 class="section-title">About Us</h3>
+    <p class="lead">BennyJeff Medical Diagnostic provides accurate and timely diagnostic services to patients and clinicians. Our team ensures quality and confidentiality.</p>
+    <div style="text-align:center;">
+      <a class="btn btn-outline-primary" href="about.html"><i class="fa-solid fa-arrow-right"></i> Learn More</a>
+    </div>
+  </section>
+
+  <!-- Services preview -->
+  <section class="section reveal">
+    <h3 class="section-title">Our Services</h3>
+    <p class="lead">We offer lab tests, imaging and screening packages — see our full services for details.</p>
+
+    <div class="cards-grid">
+      <div class="card-modern reveal">
+        <img class="thumb" src="assets/images/close-up-veterinarian-doing-some-tests.jpg" alt="Laboratory">
+        <div class="card-body">
+          <div class="icon-badge"><i class="fa-solid fa-flask"></i></div>
+          <h4>Laboratory Tests</h4>
+          <p class="text-muted">Comprehensive blood, urine and microbiology tests with strict quality control.</p>
         </div>
       </div>
-      <div class="card">
-        <img src="assets/images/imaging.jpg" alt="Imaging Services">
-        <div class="card-content">
-          <h3>Imaging Services</h3>
-          <p>Modern imaging such as X-Ray, Ultrasound, and ECG for fast and precise results.</p>
+
+      <div class="card-modern reveal">
+        <img class="thumb" src="assets/images/nurse-wearing-scrubs-while-working-clinic.jpg" alt="Imaging">
+        <div class="card-body">
+          <div class="icon-badge"><i class="fa-solid fa-x-ray"></i></div>
+          <h4>Imaging Services</h4>
+          <p class="text-muted">X-Ray, Ultrasound and ECG with quick reporting and safe procedures.</p>
         </div>
       </div>
-      <div class="card">
-        <img src="assets/images/health-screening.jpg" alt="Health Screening">
-        <div class="card-content">
-          <h3>Health Screening</h3>
-          <p>Preventive health packages designed to detect conditions early for better outcomes.</p>
+
+      <div class="card-modern reveal">
+        <img class="thumb" src="assets/images/x-ray-shot-medical-equipment.jpg" alt="Screening">
+        <div class="card-body">
+          <div class="icon-badge"><i class="fa-solid fa-heart-pulse"></i></div>
+          <h4>Health Screening</h4>
+          <p class="text-muted">Preventive packages designed to detect conditions early and guide interventions.</p>
         </div>
       </div>
     </div>
-    <a href="services.html" class="btn">View All Services</a>
+
+    <div style="text-align:center; margin-top:16px;">
+      <a class="btn btn-outline-primary" href="services.html"><i class="fa-solid fa-list"></i> View All Services</a>
+    </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 BennyJeff Diagnostic Center | All Rights Reserved</p>
-    <p>123 Main Street, City | Phone: +234 800 000 0000 | Email: info@bennyjeff.com</p>
+  <!-- CTA panel -->
+  <section class="section reveal">
+    <div class="cta-panel">
+      <div class="left">
+        <h3>Ready to check your health?</h3>
+        <p>Book easily online or call our reception. Reliable results, compassionate care.</p>
+      </div>
+      <div>
+        <a class="btn-primary-cta" href="appointment.html"><i class="fa-solid fa-calendar-check"></i> Book Appointment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ compact at bottom of homepage -->
+  <section class="section reveal">
+    <h3 class="section-title">Frequently Asked Questions</h3>
+    <div class="accordion faq-compact" id="homeFAQ">
+      <div class="accordion-item mb-2">
+        <h2 class="accordion-header" id="hfaq1">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hcollapse1">Do I need a doctor's referral?</button>
+        </h2>
+        <div id="hcollapse1" class="accordion-collapse collapse" data-bs-parent="#homeFAQ">
+          <div class="accordion-body">Most common lab tests can be booked directly. Certain specialized tests may require referral — check the service page.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item mb-2">
+        <h2 class="accordion-header" id="hfaq2">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hcollapse2">How long until my results are ready?</button>
+        </h2>
+        <div id="hcollapse2" class="accordion-collapse collapse" data-bs-parent="#homeFAQ">
+          <div class="accordion-body">Routine tests usually return within 24–48 hours; imaging and specialized tests may take longer.</div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:12px;">
+        <a class="btn btn-link" href="faq.html">See more FAQs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 BennyJeff Medical Diagnostic</p>
+    <div>
+      <a href="#" class="text-white me-3"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="#" class="text-white me-3"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#" class="text-white"><i class="fa-solid fa-envelope"></i></a>
+    </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>

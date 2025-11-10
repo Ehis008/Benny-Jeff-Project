@@ -1,29 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services & Tests | BennyJeff Diagnostic Center</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | BennyJeff Diagnostic</title>
+  <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <script defer src="assets/js/script.js"></script>
 </head>
 <body>
-  <nav class="navbar">
-  <div class="logo">
-    <a href="index.html">BennyJeff Diagnostic Center</a>
-  </div>
 
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="services.html">Services &amp; Tests</a></li>
-    <li><a href="appointment.html">Book Appointment</a></li>
-    <li><a href="contact.html">Contact Us</a></li>
-  </ul>
-</nav>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark site-header container">
+    <div class="container-fluid px-2">
+      <a class="navbar-brand" href="index.html"><i class="fa-solid fa-stethoscope"></i> BennyJeff Medical Diagnostic</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navCollapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="appointment.html">Book</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="health-tips.html">Health Tips</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
+  <!-- Hero Section -->
+  <section class="hero-services reveal">
+    <div class="inner text-center">
+      <h1>Our Diagnostic Services</h1>
+      <p>Providing precise, efficient, and reliable diagnostic care to every patient.</p>
+    </div>
+  </section>
 
+  <!-- Services Section -->
+  <section class="section reveal">
+    <h2 class="section-title text-center">Laboratory Services</h2>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="icon-circle"><i class="fa-solid fa-droplet"></i></div>
+        <h4>Hematology Tests</h4>
+        <p>Comprehensive blood tests including CBC, ESR, and differential counts for accurate diagnosis.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="icon-circle"><i class="fa-solid fa-vial"></i></div>
+        <h4>Clinical Chemistry</h4>
+        <p>Analyzing enzymes, proteins, and metabolic markers to monitor organ function and diseases.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="icon-circle"><i class="fa-solid fa-microscope"></i></div>
+        <h4>Microbiology</h4>
+        <p>Culture and sensitivity tests to identify bacterial, fungal, and parasitic infections accurately.</p>
+      </div>
+    </div>
 
-  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  
+    <h2 class="section-title text-center mt-5">Radiography Services</h2>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="icon-circle"><i class="fa-solid fa-x-ray"></i></div>
+        <h4>Digital X-Ray</h4>
+        <p>Advanced digital radiography for quick, clear imaging of bones and internal structures.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="icon-circle"><i class="fa-solid fa-heart-pulse"></i></div>
+        <h4>Ultrasound Scanning</h4>
+        <p>High-resolution sonography for abdominal, obstetric, and cardiac imaging.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="icon-circle"><i class="bi bi-upc-scan"></i></div>
+
+        <h4>CT Scan</h4>
+        <p>State-of-the-art CT imaging for cross-sectional views to detect internal abnormalities.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 BennyJeff Medical Diagnostic</p>
+    <div>
+      <a href="#" class="text-white me-3"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="#" class="text-white me-3"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#" class="text-white"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </footer>
+
+  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
