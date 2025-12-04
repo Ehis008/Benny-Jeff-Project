@@ -55,13 +55,67 @@ document.addEventListener('DOMContentLoaded', function () {
   faqHeaders.forEach(btn => {
     btn.addEventListener('click', function () {
       // Toggle icon rotation (Bootstrap already toggles collapsed state)
-      const icon = this.querySelector('i.fa-chevron-down, i.fa-chevron-up');
-      // nothing necessary; let Bootstrap handle collapse classes
+      // Placeholder for future custom icon toggles if needed.
     });
   });
 
-});
-// Lazy Reveal Animation
+  /* FAQ: Search / filter logic (applies only if #faq-search exists) */
+  (function initFaqSearch() {
+    const searchInput = document.getElementById('faq-search');
+    if (!searchInput) return;
+
+    // Gather all accordion items (within this page)
+    const accordionItems = Array.from(document.querySelectorAll('.accordion-item'));
+
+    function normalize(text) {
+      return (text || '').toString().toLowerCase().replace(/[^a-z0-9\s]/gi,'');
+    }
+
+    function filterFaq(query) {
+      const q = normalize(query.trim());
+      // Show all if empty
+      if (!q) {
+        accordionItems.forEach(item => {
+          item.style.display = '';
+        });
+        return;
+      }
+      accordionItems.forEach(item => {
+        const titleEl = item.querySelector('.accordion-button');
+        const bodyEl = item.querySelector('.accordion-body');
+        const titleText = titleEl ? titleEl.textContent : '';
+        const bodyText = bodyEl ? bodyEl.textContent : '';
+        const text = normalize(titleText + ' ' + bodyText);
+        if (text.indexOf(q) !== -1) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+          // collapse if open (uses Bootstrap Collapse)
+          const collapseEl = item.querySelector('.accordion-collapse');
+          if (collapseEl && collapseEl.classList.contains('show')) {
+            const bsCollapse = bootstrap.Collapse.getInstance(collapseEl);
+            if (bsCollapse) bsCollapse.hide();
+          }
+        }
+      });
+    }
+
+    searchInput.addEventListener('input', (e) => {
+      filterFaq(e.target.value);
+    });
+
+    // Enter focuses first visible button for accessibility
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const first = document.querySelector('.accordion-item:not([style*="display: none"]) .accordion-button');
+        if (first) first.focus();
+      }
+    });
+  })();
+
+}); // end DOMContentLoaded
+
+// Lazy Reveal Animation (separate listener to ensure it runs regardless of earlier code)
 document.addEventListener("DOMContentLoaded", () => {
   const elements = document.querySelectorAll(".fade-up");
 

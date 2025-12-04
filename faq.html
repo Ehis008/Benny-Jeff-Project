@@ -1,28 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ | BennyJeff Diagnostic Center</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FAQ | BennyJeff Medical Diagnostic</title>
+
+  <!-- Bootstrap + Icons (kept same as your site) -->
+  <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 <body>
-  <nav class="navbar">
-  <div class="logo">
-    <a href="index.html">BennyJeff Diagnostic Center</a>
-  </div>
 
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="services.html">Services &amp; Tests</a></li>
-    <li><a href="appointment.html">Book Appointment</a></li>
-    <li><a href="contact.html">Contact Us</a></li>
-  </ul>
-</nav>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark site-header container">
+    <div class="container-fluid px-2">
+      <a class="navbar-brand" href="index.html"><i class="fa-solid fa-stethoscope"></i> BennyJeff Medical Diagnostic</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navCollapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="appointment.html">Book</a></li>
+          <li class="nav-item"><a class="nav-link active" href="faq.html">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
+  <!-- Hero -->
+  <header class="faq-hero text-center">
+    <div class="inner">
+      <h1 class="display-6 mb-2">Frequently Asked Questions</h1>
+      <p class="lead mb-0">Clear answers to common queries about our diagnostic services, appointments and reports.</p>
+    </div>
+  </header>
 
-  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  
+  <!-- Main container -->
+  <main class="faq-container" role="main" aria-labelledby="faq-heading">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <div>
+        <h2 id="faq-heading" class="h5 mb-0">How can we help you?</h2>
+        <p class="faq-note mb-0">Use the search box to quickly find answers. If you can't find what you need, contact our support team.</p>
+      </div>
+      <div class="text-end d-none d-sm-block">
+        <a href="appointment.html" class="faq-cta">Book an Appointment</a>
+      </div>
+    </div>
+
+    <!-- Search -->
+    <div class="faq-search mb-3">
+      <div class="input-group">
+        <span class="input-group-text" id="search-addon"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <input id="faq-search" type="search" class="form-control" placeholder="Search FAQs — e.g. 'report', 'payment', 'x-ray'" aria-label="Search FAQs" aria-describedby="search-addon">
+      </div>
+    </div>
+
+    <!-- Accordion container -->
+    <div class="accordion" id="faqAccordion">
+
+      <!-- Appointments & Prep -->
+      <div class="faq-category">
+        <div class="d-flex align-items-center mb-2">
+          <div class="faq-icon"><i class="fa-solid fa-calendar-check"></i></div>
+          <h3 class="h6 mb-0">Appointments & Prep</h3>
+        </div>
+
+        <div class="accordion" id="appointmentsGroup">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="ap-1">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ap1" aria-expanded="false" aria-controls="ap1">
+                How do I book an appointment?
+              </button>
+            </h2>
+            <div id="ap1" class="accordion-collapse collapse" aria-labelledby="ap-1" data-bs-parent="#appointmentsGroup">
+              <div class="accordion-body">
+                You can book online via our <a href="appointment.html">appointment page</a>, call reception, or visit the centre. Walk-ins are welcome but appointments reduce waiting time.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="ap-2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ap2" aria-expanded="false" aria-controls="ap2">
+                Do I need to fast for tests or scans?
+              </button>
+            </h2>
+            <div id="ap2" class="accordion-collapse collapse" aria-labelledby="ap-2" data-bs-parent="#appointmentsGroup">
+              <div class="accordion-body">
+                Some tests require fasting (e.g. certain blood chemistry tests). Abdominal ultrasound often requires fasting or a full bladder — our appointment confirmation will include specific preparation instructions.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Laboratory -->
+      <div class="faq-category">
+        <div class="d-flex align-items-center mb-2">
+          <div class="faq-icon"><i class="fa-solid fa-vials"></i></div>
+          <h3 class="h6 mb-0">Laboratory Services & Reports</h3>
+        </div>
+
+        <div class="accordion" id="labGroup">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="lab-1">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#lab1" aria-expanded="false" aria-controls="lab1">
+                Which lab tests do you offer?
+              </button>
+            </h2>
+            <div id="lab1" class="accordion-collapse collapse" aria-labelledby="lab-1" data-bs-parent="#labGroup">
+              <div class="accordion-body">
+                We offer genotype testing, blood group typing, hemoglobin/blood level tests, blood sugar (glucose) testing, kidney function tests (creatinine, urea), liver function tests, prostate screening, ulcer investigations and pregnancy testing.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="lab-2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#lab2" aria-expanded="false" aria-controls="lab2">
+                How and when will I get my results?
+              </button>
+            </h2>
+            <div id="lab2" class="accordion-collapse collapse" aria-labelledby="lab-2" data-bs-parent="#labGroup">
+              <div class="accordion-body">
+                Many routine tests are same-day or within 24 hours. Genotype tests and specialized assays may take longer. You'll be notified via SMS/email when reports are ready for collection or download.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="lab-3">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#lab3" aria-expanded="false" aria-controls="lab3">
+                Can I get a digital copy of my report?
+              </button>
+            </h2>
+            <div id="lab3" class="accordion-collapse collapse" aria-labelledby="lab-3" data-bs-parent="#labGroup">
+              <div class="accordion-body">
+                Yes — provide an email/phone at registration and we can send an electronic copy. For official requests, visit reception.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Radiology -->
+      <div class="faq-category">
+        <div class="d-flex align-items-center mb-2">
+          <div class="faq-icon"><i class="fa-solid fa-x-ray"></i></div>
+          <h3 class="h6 mb-0">Radiology (X-Ray & Ultrasound)</h3>
+        </div>
+
+        <div class="accordion" id="radioGroup">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="rad-1">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#rad1" aria-expanded="false" aria-controls="rad1">
+                Which imaging services are available?
+              </button>
+            </h2>
+            <div id="rad1" class="accordion-collapse collapse" aria-labelledby="rad-1" data-bs-parent="#radioGroup">
+              <div class="accordion-body">
+                We provide Digital X-Ray for bones and chest imaging and high-resolution Ultrasound (abdominal, obstetric and pelvic). CT and MRI are not currently available on-site.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="rad-2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#rad2" aria-expanded="false" aria-controls="rad2">
+                Is medical imaging safe?
+              </button>
+            </h2>
+            <div id="rad2" class="accordion-collapse collapse" aria-labelledby="rad-2" data-bs-parent="#radioGroup">
+              <div class="accordion-body">
+                Ultrasound uses sound waves (no ionizing radiation). Digital X-ray uses low-dose radiation; we use shielding and follow safety protocols. Inform staff if you are pregnant.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="rad-3">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#rad3" aria-expanded="false" aria-controls="rad3">
+                How soon can I get my radiology results?
+              </button>
+            </h2>
+            <div id="rad3" class="accordion-collapse collapse" aria-labelledby="rad-3" data-bs-parent="#radioGroup">
+              <div class="accordion-body">
+                Most X-ray results are available within a few hours; ultrasound reports are typically provided the same day after radiologist review.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Payments & Insurance -->
+      <div class="faq-category">
+        <div class="d-flex align-items-center mb-2">
+          <div class="faq-icon"><i class="fa-solid fa-credit-card"></i></div>
+          <h3 class="h6 mb-0">Payments & Insurance</h3>
+        </div>
+
+        <div class="accordion" id="payGroup">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="pay-1">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pay1" aria-expanded="false" aria-controls="pay1">
+                What payment methods do you accept?
+              </button>
+            </h2>
+            <div id="pay1" class="accordion-collapse collapse" aria-labelledby="pay-1" data-bs-parent="#payGroup">
+              <div class="accordion-body">
+                We accept cash, bank transfers and card payments. For corporate or insurance billing, contact reception before your visit.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="pay-2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pay2" aria-expanded="false" aria-controls="pay2">
+                Do you accept insurance?
+              </button>
+            </h2>
+            <div id="pay2" class="accordion-collapse collapse" aria-labelledby="pay-2" data-bs-parent="#payGroup">
+              <div class="accordion-body">
+                We work with selected corporate clients and insurers. Contact reception with insurer details and we will advise whether we can bill directly.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Safety & Privacy -->
+      <div class="faq-category">
+        <div class="d-flex align-items-center mb-2">
+          <div class="faq-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 class="h6 mb-0">Safety & Privacy</h3>
+        </div>
+
+        <div class="accordion" id="privacyGroup">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="pv-1">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pv1" aria-expanded="false" aria-controls="pv1">
+                How is my medical information protected?
+              </button>
+            </h2>
+            <div id="pv1" class="accordion-collapse collapse" aria-labelledby="pv-1" data-bs-parent="#privacyGroup">
+              <div class="accordion-body">
+                Patient information is treated as confidential. Reports and data are stored securely and only shared with authorised persons or as required by law. Contact us for our privacy policy.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- end main accordion -->
+
+    <!-- Extra support row -->
+    <div class="row mt-4 align-items-center">
+      <div class="col-md-8">
+        <p class="mb-1">Didn't find an answer? Our team is happy to help.</p>
+        <p class="mb-0"><strong>Call:</strong> +234 800 000 0000 &nbsp; | &nbsp; <strong>Email:</strong> info@bennyjeff.ng</p>
+      </div>
+      <div class="col-md-4 text-md-end mt-3 mt-md-0">
+        <a href="contact.html" class="btn btn-outline-primary">Contact Support</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer mt-4">
+    <div class="container text-center py-3">
+      <p class="mb-1">&copy; 2025 BennyJeff Medical Diagnostic</p>
+      <div>
+        <a href="#" class="text-muted me-3"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="#" class="text-muted me-3"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" class="text-muted"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
