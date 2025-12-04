@@ -133,3 +133,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
   elements.forEach(el => observer.observe(el));
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  // ===== Disable past dates in date picker =====
+  const dateInput = document.getElementById('date');
+  if (dateInput) {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const dd = String(today.getDate()).padStart(2, '0');
+    dateInput.min = `${yyyy}-${mm}-${dd}`;
+  }
+
+  // ===== Fade-up reveal for appointment form and FAQ teaser =====
+  const fadeElements = document.querySelectorAll('.appointment-form, .faq-teaser');
+  const fadeObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  fadeElements.forEach(el => fadeObserver.observe(el));
+
+});
