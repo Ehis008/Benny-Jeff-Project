@@ -133,6 +133,52 @@ html, body {
   color: rgba(255,255,255,0.95);
 }
 
+/* ============================
+      HEALTH TIPS (HOMEPAGE)
+============================= */
+.health-tip-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #f2f2f2;
+}
+
+.health-tip-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+}
+
+.health-tip-card .tip-icon {
+  font-size: 35px;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.health-tip-card h5 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.health-tip-card p {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.health-tip-card .read-more {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.health-tip-card .read-more:hover {
+  text-decoration: underline;
+}
+
+
 /* ===== CTA BUTTON ===== */
 .btn-primary-cta {
   display:inline-flex;
@@ -248,6 +294,23 @@ html, body {
   transform: translateY(-6px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
+
+/* Laboratory Services Card Polish */
+.lab-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 12px;
+}
+
+.lab-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.lab-card i {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
 .icon-circle {
   width: 70px;
   height: 70px;
@@ -294,6 +357,14 @@ html, body {
 .site-footer p { margin:0; opacity:0.95; }
 
 /* ===== RESPONSIVE ===== */
+/* Icon scaling for smaller screens */
+@media (max-width: 576px) {
+  .service-item i,
+  .lab-card i {
+    font-size: 32px;
+  }
+}
+
 @media (max-width: 992px) {
   .cards-grid { grid-template-columns: repeat(2,1fr); }
   .ht-grid { grid-template-columns: repeat(2,1fr); }
@@ -509,6 +580,17 @@ html, body {
     font-size: 0.95rem;
   }
 }
+/* Appointment page mobile spacing */
+@media (max-width: 576px) {
+  .appointment-form {
+    padding: 20px !important;
+  }
+
+  .appointment-form .form-label {
+    font-size: 14px;
+  }
+}
+
 /* ===== CONTACT FORM ===== */
 .contact-form .form-label {
   font-weight: 600;
@@ -567,4 +649,73 @@ iframe {
 iframe.show {
   opacity: 1;
   transform: translateY(0);
+}
+/* Contact Page Hover Effects */
+.contact-info {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-info:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+/* Contact page mobile spacing */
+@media (max-width: 576px) {
+  .contact-form,
+  .contact-info {
+    padding: 20px !important;
+  }
+
+  .contact-section h2 {
+    font-size: 22px;
+  }
+
+  .contact-info p {
+    font-size: 14px;
+  }
+}
+
+/* ============================
+      HEALTH TIPS PAGE CARDS
+============================= */
+.health-tip-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #f2f2f2;
+}
+
+.health-tip-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+}
+
+.health-tip-card .tip-icon {
+  font-size: 40px;
+  color: var(--royal-2);
+  margin-bottom: 15px;
+}
+
+.health-tip-card h5 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.health-tip-card p {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.health-tip-card .read-more {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--royal-2);
+  text-decoration: none;
+}
+
+.health-tip-card .read-more:hover {
+  text-decoration: underline;
 }

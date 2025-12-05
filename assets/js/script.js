@@ -177,3 +177,13 @@ document.addEventListener('DOMContentLoaded', () => {
   fadeElementsContact.forEach(el => fadeObserverContact.observe(el));
 
 });
+// Appointment form submission confirmation
+const appointmentForm = document.querySelector(".appointment-form");
+
+if (appointmentForm) {
+  appointmentForm.addEventListener("submit", function () {
+    setTimeout(() => {
+      alert("Your appointment request has been submitted successfully!");
+    }, 500);
+  });
+}
