@@ -161,3 +161,19 @@ document.addEventListener('DOMContentLoaded', () => {
   fadeElements.forEach(el => fadeObserver.observe(el));
 
 });
+document.addEventListener('DOMContentLoaded', () => {
+
+  // ===== Fade-up reveal for contact form, info cards, map, FAQ teaser =====
+  const fadeElementsContact = document.querySelectorAll('.contact-form, .cards-grid .card-modern, .faq-teaser, iframe');
+  const fadeObserverContact = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        fadeObserverContact.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  fadeElementsContact.forEach(el => fadeObserverContact.observe(el));
+
+});
