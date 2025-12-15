@@ -63,7 +63,12 @@ html, body {
 }
 
 /* ===== HERO SECTIONS ===== */
-.hero-home, .hero-services, .hero-about {
+.hero-home, 
+.hero-services, 
+.hero-about,
+.hero-book,
+.hero-contact,
+.hero-health {
   width: 95%;
   max-width: 1200px;
   margin: 22px auto;
@@ -81,6 +86,7 @@ html, body {
   overflow: hidden;
 }
 
+/* Existing */
 .hero-home {
   background-image: linear-gradient(180deg, rgba(23,63,119,0.3), rgba(42,111,182,0.2)),
     url('../images/monitor-hospital-ward-showing-bmp-from-patient.jpg');
@@ -91,12 +97,34 @@ html, body {
 }
 .hero-services {
   background-image: linear-gradient(180deg, rgba(23,63,119,0.4), rgba(42,111,182,0.3)),
-    url('../images/medical-lab-background.jpg');
+    url('../images/male-employee-getting-used-his-new-office-job-along-with-female-colleagues.jpg');
 }
 
+/* NEW — Booking Page */
+.hero-book {
+  background-image: linear-gradient(180deg, rgba(23,63,119,0.40), rgba(42,111,182,0.30)),
+    url('../images/doctor-writing-patient-record-hospital.jpg');
+}
+
+/* NEW — Contact Page */
+.hero-contact {
+  background-image: linear-gradient(180deg, rgba(23,63,119,0.40), rgba(42,111,182,0.30)),
+    url('../images/medical-team-talking-with-patient-reception-area.jpg');
+}
+
+/* NEW — Health Tips Page */
+.hero-health {
+  background-image: linear-gradient(180deg, rgba(23,63,119,0.40), rgba(42,111,182,0.30)),
+    url('../images/doctor-holding-stethoscope-clipboard-healthcare.jpg');
+}
+
+/* Shared overlay */
 .hero-home::before,
 .hero-about::before,
-.hero-services::before {
+.hero-services::before,
+.hero-book::before,
+.hero-contact::before,
+.hero-health::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -104,18 +132,26 @@ html, body {
   border-radius: inherit;
 }
 
+/* Shared inner wrapper */
 .hero-home .inner,
 .hero-about .inner,
-.hero-services .inner {
+.hero-services .inner,
+.hero-book .inner,
+.hero-contact .inner,
+.hero-health .inner {
   position: relative;
   max-width: 820px;
   color: #fff;
   z-index: 2;
 }
 
+/* Shared heading */
 .hero-home h1,
 .hero-about h1,
-.hero-services h1 {
+.hero-services h1,
+.hero-book h1,
+.hero-contact h1,
+.hero-health h1 {
   font-size: clamp(1.8rem, 3.2vw, 2.8rem);
   margin-bottom: 14px;
   font-weight: 800;
@@ -125,13 +161,18 @@ html, body {
   -webkit-text-fill-color: transparent;
 }
 
+/* Shared sub-text */
 .hero-home p,
 .hero-about p,
-.hero-services p {
+.hero-services p,
+.hero-book p,
+.hero-contact p,
+.hero-health p {
   font-size:1.05rem;
   margin-bottom:20px;
   color: rgba(255,255,255,0.95);
 }
+
 
 /* ============================
       HEALTH TIPS (HOMEPAGE)
@@ -276,6 +317,7 @@ html, body {
 .faq-compact .accordion-button { font-weight:700; }
 .faq-compact .accordion-body { color:var(--muted); }
 
+
 /* ===== SERVICES CARDS ===== */
 .services-grid {
   display: grid;
@@ -375,116 +417,6 @@ html, body {
   .cards-grid, .ht-grid, .services-grid { grid-template-columns: 1fr; }
   .site-footer { text-align:center; justify-content:center; }
   .cta-panel { flex-direction:column; text-align:center; }
-}
-
-/* ---------------------------------------------------------------------------
-   FAQ PAGE SPECIFIC STYLES (kept here to avoid extra files; integrated safely)
-   --------------------------------------------------------------------------- */
-
-/* Hero (FAQ) */
-.faq-hero {
-  background: linear-gradient(180deg, rgba(23,63,119,0.95), rgba(42,111,182,0.95));
-  color: #fff;
-  padding: 3.5rem 1rem;
-  border-radius: 12px;
-  width: 95%;
-  max-width: 1200px;
-  margin: 22px auto;
-  box-shadow: var(--card-shadow);
-}
-
-/* FAQ container card (white) */
-.faq-container {
-  max-width: 1100px;
-  margin: -2.5rem auto 3rem;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 12px 30px rgba(8,20,50,0.08);
-  padding: 1.5rem;
-}
-
-/* search */
-.faq-search input {
-  min-height: 48px;
-  box-shadow: none;
-}
-
-/* icon square */
-.faq-icon {
-  width: 46px; height: 46px; display:inline-flex; align-items:center; justify-content:center;
-  background: rgba(3,62,140,0.08); color:#033e8c; border-radius:10px; margin-right:.75rem;
-}
-
-/* smaller notes and CTA */
-.faq-note { font-size:.95rem; color:var(--muted); }
-.faq-cta { background: var(--royal-1); border: none; color: #fff; padding: .6rem 1rem; border-radius:8px; }
-.faq-cta:hover { opacity: .95; transform: translateY(-2px); }
-
-/* FAQ category spacing */
-.faq-category { margin-top: 1.25rem; }
-
-/* compact accordion style (used on some pages) */
-.faq-compact .accordion-button { font-weight:700; }
-.faq-compact .accordion-body { color:var(--muted); }
-
-/* ===== FAQ TEASER ===== */
-.faq-teaser {
-  margin-top: 45px;
-}
-
-.faq-teaser-inner {
-  background: linear-gradient(135deg, var(--royal-1), var(--royal-2));
-  padding: 38px 26px;
-  border-radius: 16px;
-  color: #fff;
-  text-align: center;
-  box-shadow: 0 20px 48px rgba(19,35,64,0.22);
-}
-
-.faq-teaser-inner h2 {
-  font-size: 1.6rem;
-  font-weight: 800;
-  margin-bottom: 10px;
-}
-
-.faq-teaser-inner p {
-  max-width: 700px;
-  margin: 0 auto 20px;
-  color: rgba(255,255,255,0.92);
-}
-
-.btn-faq-teaser {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 20px;
-  background: #fff;
-  color: var(--royal-1);
-  font-weight: 700;
-  border-radius: 10px;
-  text-decoration: none;
-  box-shadow: 0 14px 36px rgba(0,0,0,0.15);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.btn-faq-teaser:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 48px rgba(0,0,0,0.18);
-}
-
-/* Icon hover animation */
-.btn-faq-teaser i {
-  transition: transform .3s ease;
-}
-.btn-faq-teaser:hover i {
-  transform: translateX(6px);
-}
-
-
-/* small responsive tweaks */
-@media (max-width: 576px) {
-  .faq-container { margin: -1.5rem 0 2rem; padding: 1rem; border-radius:8px; }
-  .faq-hero { padding: 2rem 1rem; }
 }
 
 /* ===== APPOINTMENT FORM ===== */
