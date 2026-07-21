@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Home | BennyJeff Medical Diagnostic</title>
 
-  <!-- Bootstrap CSS (local file or CDN) -->
+  <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
@@ -12,10 +13,14 @@
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Main JS: loaded here with defer so it runs after parsing, before DOMContentLoaded fires,
+       same pattern now used consistently across every page -->
+  <script defer src="assets/js/script.js"></script>
 </head>
 <body>
 
-  <!-- Header / Navbar (Bootstrap markup for accessibility & responsiveness) -->
+  <!-- Header / Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark site-header container">
     <div class="container-fluid px-2">
       <a class="navbar-brand" href="index.html"><i class="fa-solid fa-stethoscope"></i> BennyJeff Medical Diagnostic</a>
@@ -24,7 +29,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navCollapse">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="appointment.html">Book</a></li>
@@ -94,62 +99,61 @@
 
   <!-- ============================
        HEALTH TIPS SECTION
-============================= -->
-<section id="health-tips" class="py-5">
-  <div class="container">
+  ============================= -->
+  <section id="health-tips" class="py-5">
+    <div class="container">
 
-    <div class="text-center mb-4">
-      <h2 class="section-title">Health Tips</h2>
-      <p class="section-subtitle">Simple preventive tips to help you stay healthy.</p>
-    </div>
-
-    <div class="row g-4">
-
-      <!-- Tip Card 1 -->
-      <div class="col-md-4">
-        <div class="health-tip-card shadow-sm">
-          <div class="tip-icon">
-            <i class="fa-solid fa-heart-pulse"></i>
-          </div>
-          <h5>Stay Hydrated Daily</h5>
-          <p>Drinking enough water supports metabolism, improves skin health, and boosts your immune system.</p>
-          <a href="health-tips.html" class="read-more">Read More</a>
-        </div>
+      <div class="text-center mb-4">
+        <h2 class="section-title">Health Tips</h2>
+        <p class="section-subtitle">Simple preventive tips to help you stay healthy.</p>
       </div>
 
-      <!-- Tip Card 2 -->
-      <div class="col-md-4">
-        <div class="health-tip-card shadow-sm">
-          <div class="tip-icon">
-            <i class="fa-solid fa-stethoscope"></i>
+      <div class="row g-4">
+
+        <!-- Tip Card 1 -->
+        <div class="col-md-4">
+          <div class="health-tip-card shadow-sm">
+            <div class="tip-icon">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <h5>Stay Hydrated Daily</h5>
+            <p>Drinking enough water supports metabolism, improves skin health, and boosts your immune system.</p>
+            <a href="health-tips.html" class="read-more">Read More</a>
           </div>
-          <h5>Routine Health Checks</h5>
-          <p>Regular check-ups help detect health conditions early and keep you feeling your best.</p>
-          <a href="health-tips.html" class="read-more">Read More</a>
         </div>
+
+        <!-- Tip Card 2 -->
+        <div class="col-md-4">
+          <div class="health-tip-card shadow-sm">
+            <div class="tip-icon">
+              <i class="fa-solid fa-stethoscope"></i>
+            </div>
+            <h5>Routine Health Checks</h5>
+            <p>Regular check-ups help detect health conditions early and keep you feeling your best.</p>
+            <a href="health-tips.html" class="read-more">Read More</a>
+          </div>
+        </div>
+
+        <!-- Tip Card 3 -->
+        <div class="col-md-4">
+          <div class="health-tip-card shadow-sm">
+            <div class="tip-icon">
+              <i class="fa-solid fa-apple-whole"></i>
+            </div>
+            <h5>Healthy Eating Habits</h5>
+            <p>Include fruits, vegetables, and whole grains in your meals for lasting energy and wellness.</p>
+            <a href="health-tips.html" class="read-more">Read More</a>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Tip Card 3 -->
-      <div class="col-md-4">
-        <div class="health-tip-card shadow-sm">
-          <div class="tip-icon">
-            <i class="fa-solid fa-apple-whole"></i>
-          </div>
-          <h5>Healthy Eating Habits</h5>
-          <p>Include fruits, vegetables, and whole grains in your meals for lasting energy and wellness.</p>
-          <a href="health-tips.html" class="read-more">Read More</a>
-        </div>
+      <div class="text-center mt-4">
+        <a href="health-tips.html" class="btn btn-primary px-4">View All Tips</a>
       </div>
 
     </div>
-
-    <div class="text-center mt-4">
-      <a href="health-tips.html" class="btn btn-primary px-4">View All Tips</a>
-    </div>
-
-  </div>
-</section>
-
+  </section>
 
   <!-- CTA panel -->
   <section class="section reveal">
@@ -164,84 +168,82 @@
     </div>
   </section>
 
-  <!-- FAQ compact at bottom of homepage -->
+  <!-- FAQ (full accordion lives here on the homepage — this is the site's only FAQ content) -->
   <section class="section reveal">
     <h3 class="section-title">Frequently Asked Questions</h3>
     <div class="accordion faq-compact" id="homeFAQ">
-      <div class="accordion faq-compact" id="homeFAQ">
 
-  <div class="accordion-item mb-2">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq1">
-        Do I need a doctor’s referral before coming?
-      </button>
-    </h2>
-    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#homeFAQ">
-      <div class="accordion-body">
-        Most routine laboratory tests and imaging services such as X-ray and ultrasound can be done without a referral. However, some specialized tests may require a doctor's request to ensure proper clinical interpretation.
+      <div class="accordion-item mb-2">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq1">
+            Do I need a doctor’s referral before coming?
+          </button>
+        </h2>
+        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#homeFAQ">
+          <div class="accordion-body">
+            Most routine laboratory tests and imaging services such as X-ray and ultrasound can be done without a referral. However, some specialized tests may require a doctor's request to ensure proper clinical interpretation.
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div class="accordion-item mb-2">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">
-        How long does it take to get test results?
-      </button>
-    </h2>
-    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#homeFAQ">
-      <div class="accordion-body">
-        Most laboratory test results are available within 24–48 hours. Imaging reports may take slightly longer depending on the complexity, but urgent cases are prioritized.
+      <div class="accordion-item mb-2">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">
+            How long does it take to get test results?
+          </button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#homeFAQ">
+          <div class="accordion-body">
+            Most laboratory test results are available within 24–48 hours. Imaging reports may take slightly longer depending on the complexity, but urgent cases are prioritized.
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div class="accordion-item mb-2">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">
-        Is fasting required before laboratory tests?
-      </button>
-    </h2>
-    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#homeFAQ">
-      <div class="accordion-body">
-        Some tests, such as blood sugar and lipid profile tests, may require fasting. Our staff will always inform you ahead of time on how to prepare for your specific test.
+      <div class="accordion-item mb-2">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">
+            Is fasting required before laboratory tests?
+          </button>
+        </h2>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#homeFAQ">
+          <div class="accordion-body">
+            Some tests, such as blood sugar and lipid profile tests, may require fasting. Our staff will always inform you ahead of time on how to prepare for your specific test.
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div class="accordion-item mb-2">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq4">
-        Are diagnostic tests safe?
-      </button>
-    </h2>
-    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#homeFAQ">
-      <div class="accordion-body">
-        Yes. All tests are performed using modern, well-maintained equipment and follow strict safety and hygiene protocols. Imaging services use controlled exposure in line with medical standards.
+      <div class="accordion-item mb-2">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq4">
+            Are diagnostic tests safe?
+          </button>
+        </h2>
+        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#homeFAQ">
+          <div class="accordion-body">
+            Yes. All tests are performed using modern, well-maintained equipment and follow strict safety and hygiene protocols. Imaging services use controlled exposure in line with medical standards.
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div class="accordion-item mb-2">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq5">
-        Can I walk in or do I need an appointment?
-      </button>
-    </h2>
-    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#homeFAQ">
-      <div class="accordion-body">
-        Walk-in patients are welcome, but booking an appointment helps reduce waiting time and ensures faster service, especially for imaging and specialized tests.
+      <div class="accordion-item mb-2">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq5">
+            Can I walk in or do I need an appointment?
+          </button>
+        </h2>
+        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#homeFAQ">
+          <div class="accordion-body">
+            Walk-in patients are welcome, but booking an appointment helps reduce waiting time and ensures faster service, especially for imaging and specialized tests.
+          </div>
+        </div>
       </div>
+
     </div>
-  </div>
-
-</div>
-
   </section>
 
   <!-- Footer -->
   <footer class="site-footer">
-    <p>&copy; 2025 BennyJeff Medical Diagnostic</p>
+    <p>&copy; <span id="year">2025</span> BennyJeff Medical Diagnostic</p>
     <div>
       <a href="#" class="text-white me-3"><i class="fa-brands fa-whatsapp"></i></a>
       <a href="#" class="text-white me-3"><i class="fa-brands fa-facebook-f"></i></a>
@@ -249,8 +251,7 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Bootstrap JS (needed for navbar collapse + accordion) -->
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/script.js"></script>
 </body>
 </html>

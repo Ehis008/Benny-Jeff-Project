@@ -1,4 +1,7 @@
 /* style.css — Final Polished Version (Royal Blue Gradient + Bootstrap Harmony) */
+/* Revamped: removed duplicate .health-tip-card block, fixed undefined --primary-color,
+   removed unused/dead selectors (.lab-card, .contact-info, .service-item, .ht-grid),
+   fixed inconsistent mobile hero coverage, and made .icon-circle use the design system vars. */
 
 /* RESET */
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -40,7 +43,6 @@
 .site-header .navbar-toggler:hover {
   background: rgba(23, 63, 119, 0.15);
 }
-
 
 html, body {
   height: 100%;
@@ -91,8 +93,8 @@ html, body {
 }
 
 /* ===== HERO SECTIONS ===== */
-.hero-home, 
-.hero-services, 
+.hero-home,
+.hero-services,
 .hero-about,
 .hero-book,
 .hero-contact,
@@ -114,7 +116,6 @@ html, body {
   overflow: hidden;
 }
 
-/* Existing */
 .hero-home {
   background-image: linear-gradient(180deg, rgba(23,63,119,0.3), rgba(42,111,182,0.2)),
     url('../images/monitor-hospital-ward-showing-bmp-from-patient.jpg');
@@ -124,23 +125,18 @@ html, body {
     url('../images/physicians-radiologists-examine-x-ray-scan-results-develop-treatment-plan.jpg');
 }
 .hero-services {
+  /* NOTE: still a generic office stock photo — consider swapping for a diagnostic/lab-themed image to match the other heroes */
   background-image: linear-gradient(180deg, rgba(23,63,119,0.4), rgba(42,111,182,0.3)),
     url('../images/male-employee-getting-used-his-new-office-job-along-with-female-colleagues.jpg');
 }
-
-/* NEW — Booking Page */
 .hero-book {
   background-image: linear-gradient(180deg, rgba(23,63,119,0.40), rgba(42,111,182,0.30)),
     url('../images/doctor-walking-with-laptop-medium-shot.jpg');
 }
-
-/* NEW — Contact Page */
 .hero-contact {
   background-image: linear-gradient(180deg, rgba(23,63,119,0.40), rgba(42,111,182,0.30)),
     url('../images/patient-couch-doctor-makes-ultrasound-diagnosis-man-white-uniform.jpg');
 }
-
-/* NEW — Health Tips Page */
 .hero-health {
   background-image: linear-gradient(180deg, rgba(23,63,119,0.40), rgba(42,111,182,0.30)),
     url('../images/close-up-veterinarian-doing-some-tests.jpg');
@@ -201,9 +197,10 @@ html, body {
   color: rgba(255,255,255,0.95);
 }
 
-
 /* ============================
-      HEALTH TIPS (HOMEPAGE)
+   HEALTH TIP CARDS
+   (used on both the homepage preview and the Health Tips page —
+   merged from two duplicate blocks into one)
 ============================= */
 .health-tip-card {
   background: #ffffff;
@@ -220,8 +217,8 @@ html, body {
 }
 
 .health-tip-card .tip-icon {
-  font-size: 35px;
-  color: var(--primary-color);
+  font-size: 40px;
+  color: var(--royal-2);
   margin-bottom: 15px;
 }
 
@@ -239,14 +236,13 @@ html, body {
 .health-tip-card .read-more {
   font-weight: 600;
   font-size: 14px;
-  color: var(--primary-color);
+  color: var(--royal-2);
   text-decoration: none;
 }
 
 .health-tip-card .read-more:hover {
   text-decoration: underline;
 }
-
 
 /* ===== CTA BUTTON ===== */
 .btn-primary-cta {
@@ -326,6 +322,11 @@ html, body {
   font-size:1.15rem;
 }
 
+/* Hover polish for info cards (e.g. the Contact page cards, which use .card-modern) */
+.card-modern:hover .icon-badge {
+  transform: scale(1.06);
+}
+
 /* ===== CTA PANEL ===== */
 .cta-panel {
   background: linear-gradient(135deg, var(--royal-1), var(--royal-2));
@@ -345,8 +346,7 @@ html, body {
 .faq-compact .accordion-button { font-weight:700; }
 .faq-compact .accordion-body { color:var(--muted); }
 
-
-/* ===== SERVICES CARDS ===== */
+/* ===== SERVICES / HEALTH TIPS CARDS (icon-circle style) ===== */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -364,19 +364,7 @@ html, body {
   transform: translateY(-6px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
-
-/* Laboratory Services Card Polish */
-.lab-card {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  border-radius: 12px;
-}
-
-.lab-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-}
-
-.lab-card i {
+.service-card i {
   font-size: 40px;
   margin-bottom: 15px;
 }
@@ -385,7 +373,7 @@ html, body {
   width: 70px;
   height: 70px;
   margin: 0 auto 1rem;
-  background: linear-gradient(135deg, royalblue, #1a4ca3);
+  background: var(--accent-grad);
   color: #fff;
   display: flex;
   align-items: center;
@@ -427,22 +415,27 @@ html, body {
 .site-footer p { margin:0; opacity:0.95; }
 
 /* ===== RESPONSIVE ===== */
-/* Icon scaling for smaller screens */
 @media (max-width: 576px) {
-  .service-item i,
-  .lab-card i {
+  .service-card i {
     font-size: 32px;
   }
 }
 
 @media (max-width: 992px) {
   .cards-grid { grid-template-columns: repeat(2,1fr); }
-  .ht-grid { grid-template-columns: repeat(2,1fr); }
 }
+
 @media (max-width: 640px) {
   body { padding-top: 12px; }
-  .hero-home, .hero-about, .hero-services { min-height: 56vh; padding:24px; border-radius:12px; margin:12px; }
-  .cards-grid, .ht-grid, .services-grid { grid-template-columns: 1fr; }
+  /* All six hero variants now shrink consistently on mobile (previously only 3 of 6 were covered) */
+  .hero-home, .hero-about, .hero-services,
+  .hero-book, .hero-contact, .hero-health {
+    min-height: 56vh;
+    padding: 24px;
+    border-radius: 12px;
+    margin: 12px;
+  }
+  .cards-grid, .services-grid { grid-template-columns: 1fr; }
   .site-footer { text-align:center; justify-content:center; }
   .cta-panel { flex-direction:column; text-align:center; }
 }
@@ -482,7 +475,6 @@ html, body {
   resize: none;
 }
 
-/* CTA Button inside Form */
 .appointment-form button.btn-primary-cta {
   padding: 14px 24px;
   font-size: 1.05rem;
@@ -493,7 +485,7 @@ html, body {
 .faq-teaser {
   background: linear-gradient(135deg, rgba(23,63,119,0.9), rgba(42,111,182,0.85));
   color: #fff;
-   padding: 28px 24px;
+  padding: 28px 24px;
   border-radius: 16px;
   text-align: center;
   margin: 34px auto;
@@ -527,7 +519,6 @@ html, body {
   box-shadow: 0 20px 48px rgba(26,48,110,0.22);
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
   .appointment-form .input-group-text {
     font-size: 0.9rem;
@@ -540,12 +531,11 @@ html, body {
     font-size: 0.95rem;
   }
 }
-/* Appointment page mobile spacing */
+
 @media (max-width: 576px) {
   .appointment-form {
     padding: 20px !important;
   }
-
   .appointment-form .form-label {
     font-size: 14px;
   }
@@ -586,14 +576,13 @@ html, body {
   resize: none;
 }
 
-/* CTA Button inside Contact Form */
 .contact-form button.btn-primary-cta {
   padding: 14px 24px;
   font-size: 1.05rem;
   border-radius: var(--radius);
 }
 
-/* Fade-up reveal for form, cards, and map */
+/* Fade-up reveal for form, cards, and map on the Contact page */
 .contact-form,
 .cards-grid .card-modern,
 .faq-teaser,
@@ -610,72 +599,9 @@ iframe.show {
   opacity: 1;
   transform: translateY(0);
 }
-/* Contact Page Hover Effects */
-.contact-info {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
 
-.contact-info:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-}
-/* Contact page mobile spacing */
 @media (max-width: 576px) {
-  .contact-form,
-  .contact-info {
+  .contact-form {
     padding: 20px !important;
   }
-
-  .contact-section h2 {
-    font-size: 22px;
-  }
-
-  .contact-info p {
-    font-size: 14px;
-  }
-}
-
-/* ============================
-      HEALTH TIPS PAGE CARDS
-============================= */
-.health-tip-card {
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 25px;
-  text-align: center;
-  transition: all 0.3s ease;
-  border: 1px solid #f2f2f2;
-}
-
-.health-tip-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.07);
-}
-
-.health-tip-card .tip-icon {
-  font-size: 40px;
-  color: var(--royal-2);
-  margin-bottom: 15px;
-}
-
-.health-tip-card h5 {
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.health-tip-card p {
-  font-size: 15px;
-  color: #666;
-  margin-bottom: 15px;
-}
-
-.health-tip-card .read-more {
-  font-weight: 600;
-  font-size: 14px;
-  color: var(--royal-2);
-  text-decoration: none;
-}
-
-.health-tip-card .read-more:hover {
-  text-decoration: underline;
 }
